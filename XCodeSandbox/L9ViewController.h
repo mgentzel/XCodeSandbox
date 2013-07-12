@@ -10,6 +10,7 @@
 
 @interface L9ViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

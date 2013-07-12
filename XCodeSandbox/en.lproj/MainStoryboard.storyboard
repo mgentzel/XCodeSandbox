@@ -18,20 +18,34 @@
                                     <constraint firstAttribute="width" constant="788" id="9rv-vp-meP"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mft-Jk-Uxo">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="280" height="152"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="VBU-Fv-U4j">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AthleteDataCell" id="VBU-Fv-U4j" customClass="L9AthleteDataCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="152"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prv-bq-TOq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="201" id="YRa-Np-d5T"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="prv-bq-TOq" firstAttribute="leading" secondItem="VBU-Fv-U4j" secondAttribute="leading" constant="73" id="KwG-id-vVN"/>
+                                            <constraint firstItem="prv-bq-TOq" firstAttribute="top" secondItem="VBU-Fv-U4j" secondAttribute="top" constant="22" id="mHw-0P-vDO"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -43,12 +57,18 @@
                             <constraint firstItem="BIq-Mg-rms" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="wUB-nm-aZl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="BIq-Mg-rms" id="dAn-HY-2hd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
     <classes>
+        <class className="L9AthleteDataCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/L9AthleteDataCell.h"/>
+        </class>
         <class className="L9ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/L9ViewController.h"/>
             <relationships>
