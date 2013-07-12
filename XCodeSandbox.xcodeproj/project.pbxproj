@@ -96,6 +96,7 @@
 		0037361F178F3534004D7853 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0037363B178F468F004D7853 /* images */,
 				00373620178F3534004D7853 /* XCodeSandbox-Info.plist */,
 				00373621178F3534004D7853 /* InfoPlist.strings */,
 				00373624178F3534004D7853 /* main.m */,
@@ -105,6 +106,13 @@
 				0037362E178F3534004D7853 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0037363B178F468F004D7853 /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +269,7 @@
 		00373639178F3534004D7853 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XCodeSandbox/XCodeSandbox-Prefix.pch";
 				INFOPLIST_FILE = "XCodeSandbox/XCodeSandbox-Info.plist";
@@ -272,6 +281,7 @@
 		0037363A178F3534004D7853 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XCodeSandbox/XCodeSandbox-Prefix.pch";
 				INFOPLIST_FILE = "XCodeSandbox/XCodeSandbox-Info.plist";

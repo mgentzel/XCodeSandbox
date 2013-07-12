@@ -14,11 +14,14 @@
 
 @implementation L9ViewController
 
+@synthesize collectionView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   // save and push to github
+  [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"FlickrCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,5 +29,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - UICollectionView Datasource
+
 
 @end

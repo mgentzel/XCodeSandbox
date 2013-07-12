@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface L9ViewController : UIViewController
+@interface L9ViewController : UIViewController <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end
