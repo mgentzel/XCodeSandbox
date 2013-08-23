@@ -1,0 +1,6 @@
+# iOS, XCode, and app specific files and directories #
+#####################
+build/*
+*.xcuserdata
+git-info.txt
+git-info-test.txt
