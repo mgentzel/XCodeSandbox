@@ -40,6 +40,7 @@
 		00373631178F3534004D7853 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		00373633178F3534004D7853 /* L9ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = L9ViewController.h; sourceTree = "<group>"; };
 		00373634178F3534004D7853 /* L9ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = L9ViewController.m; sourceTree = "<group>"; };
+		00AD772417C79C46007A658B /* versioning.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = versioning.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 				0037361F178F3534004D7853 /* Supporting Files */,
 				0025468E17904E9800E5C4D3 /* L9AthleteDataCell.h */,
 				0025468F17904E9800E5C4D3 /* L9AthleteDataCell.m */,
+				00AD772417C79C46007A658B /* versioning.sh */,
 			);
 			path = XCodeSandbox;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00373638178F3534004D7853 /* Build configuration list for PBXNativeTarget "XCodeSandbox" */;
 			buildPhases = (
+				00AD772317C79AC4007A658B /* ShellScript */,
 				00373611178F3534004D7853 /* Sources */,
 				00373612178F3534004D7853 /* Frameworks */,
 				00373613178F3534004D7853 /* Resources */,
@@ -181,6 +184,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00AD772317C79AC4007A658B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"RUNNING\"\n\n#commit=$(git log  -1 |grep commit |cut -c8-)\n#count=$(git log --pretty=oneline | wc -l | tr -d ' ')\ncommit=$(git log --pretty=format:\"%h\" -1)\ncount=$(git log --pretty=oneline | wc -l | tr -d ' ')\necho $commit\necho $count\ncommit=\"$commit-$count\"\necho $commit\necho $commit > git-info-test.txt\n#export git_commit=$(cat git-info-test.txt)\nexport git_commit=\"$commit\"\necho ${git_commit}\n#if [\"$CONFIGURATION\" == \"Debug\"]; then\n#echo \"EDIT PLIST\"\n#export git_commit=$(cat poc/git-info.txt)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion '${git_commit}'\" \"$INFOPLIST_FILE\"\n#fi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00373611178F3534004D7853 /* Sources */ = {
