@@ -197,7 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"RUNNING\"\n\n#commit=$(git log  -1 |grep commit |cut -c8-)\n#count=$(git log --pretty=oneline | wc -l | tr -d ' ')\ncommit=$(git log --pretty=format:\"%h\" -1)\ncount=$(git log --pretty=oneline | wc -l | tr -d ' ')\necho $commit\necho $count\ncommit=\"$commit.$count\"\necho $commit\necho $commit > git-info-test.txt\n#export git_commit=$(cat git-info-test.txt)\nexport git_commit=\"$commit\"\necho ${git_commit}\n#if [\"$CONFIGURATION\" == \"Debug\"]; then\n#echo \"EDIT PLIST\"\n#export git_commit=$(cat poc/git-info.txt)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion '${git_commit}'\" \"$INFOPLIST_FILE\"\n#fi";
+			shellScript = "echo \"RUN BUILD SCRIPT\"\n#commit=$(git log  -1 |grep commit |cut -c8-)\n#count=$(git log --pretty=oneline | wc -l | tr -d ' ')\ncommit=$(git log --pretty=format:\"%h\" -1)\ncount=$(git log --oneline | wc -l | tr -d ' ')\necho $commit\necho $count\ncommit=\"$commit.$count\"\necho $commit\necho $commit > git-info-test.txt\n#export git_commit=$(cat git-info-test.txt)\nexport git_commit=\"$commit\"\necho ${git_commit}\n#if [\"$CONFIGURATION\" == \"Debug\"]; then\necho \"EDIT PLIST\"\n#export git_commit=$(cat poc/git-info.txt)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion '${git_commit}'\" \"$INFOPLIST_FILE\"\necho \"ADD AND COMMIT EDITED PLIST\"\ngit add \\*-Info.plist\ngit commit \\*-Info.plist  -m 'committed iOS [project]-Info.plist after build script versioning updates'\n#fi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
